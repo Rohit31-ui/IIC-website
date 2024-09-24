@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Disaster Management</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .dropdown-container {
+        margin: 20px 0;
+    }
+    .dropdown {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .dropdown select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+    .dropdown button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+    .dropdown button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">  
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">CRISIS SUPPORT</a></li>
+                    <li><a href="course.html">EMERGENCY SHELTER</a></li>
+                    <li><a href="Registration Form/index2.html">VOLUNTEER MANAGEMENT</a></li>
+                    <li><a href="contact.html">MENTAL HEALTH SUPPORT</a></li>
+                    <li><a href="Registration Form 2/Waste Management code/index.html">DONATION MANAGEMENT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+            <h1>Emergency Shelter</h1>
+    </section>
+
+
+<br>
+<br>
+<br>
+    <section class="dropdown-container">
+        <div class="dropdown">
+            <select id="state" onchange="updateCities()">
+                <option value="">Select State</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Delhi">Delhi</option>
+                <!-- Add other states as needed -->
+            </select>
+            <select id="city" onchange="updateAreas()">
+                <option value="">Select City</option>
+                <!-- Cities will be populated based on state selection -->
+            </select>
+            <select id="area">
+                <option value="">Select Area</option>
+                <!-- Areas will be populated based on city selection -->
+            </select>
+            <button onclick="updateMap()">Show Shelter</button>
+        </div>
+    </section>
+
+    <section class="campus">
+        <section class="location">
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.368144678623!2d77.55384341419037!3d13.012212417508028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d7f3535d71b%3A0x660d25b66e9fb25c!2sWorld+Trade+Centre!5e0!3m2!1sen!2sin!4v1565255080367!5m2!1sen!2sin" width="720" height="445" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+    
+    <!---------- Contact ---------->
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5>I2IT, Hinjewadi, Pune</h5>
+                        <p>Pune, Maharashtra, IN</p>
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>+91 8793939543</h5>
+                        <p></p>
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope-o"></i>
+                    <span>
+                        <h5>yashborade072@gmail.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+
+    <!-------- footer ---------->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>We offer a Unified Disaster Management Platform that integrates essential disaster response functions to enhance efficiency and community resilience.</p>
+        
+        <div class="icons">
+            <a href="https://www.facebook.com/yash.borade.520"><i class="fa fa-facebook"></i></a>
+            <a href="https://x.com/YashBor85156585"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/yash_borade001/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/yash-borade-486776195/"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <p>&copy; 2024 Unified Disaster Management Platform</p>
+    </section>    
+  
+    <!----JavaScript for toggle menu---->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        function updateCities() {
+            var state = document.getElementById('state').value;
+            var citySelect = document.getElementById('city');
+            var areaSelect = document.getElementById('area');
+
+            // Clear previous options
+            citySelect.innerHTML = '<option value="">Select City</option>';
+            areaSelect.innerHTML = '<option value="">Select Area</option>';
+
+            // Example cities
+            if (state === 'Maharashtra') {
+                citySelect.innerHTML += '<option value="Pune">Pune</option>';
+                citySelect.innerHTML += '<option value="Mumbai">Mumbai</option>';
+            } else if (state === 'Karnataka') {
+                citySelect.innerHTML += '<option value="Bangalore">Bangalore</option>';
+                citySelect.innerHTML += '<option value="Mysore">Mysore</option>';
+            } else if (state === 'Gujarat') {
+                citySelect.innerHTML += '<option value="Ahmedabad">Ahmedabad</option>';
+                citySelect.innerHTML += '<option value="Surat">Surat</option>';
+            } else if (state === 'Delhi') {
+                citySelect.innerHTML += '<option value="Delhi">Delhi</option>';
+            }
+            // Add other states and cities as needed
+        }
+
+        function updateAreas() {
+            var city = document.getElementById('city').value;
+            var areaSelect = document.getElementById('area');
+
+            // Clear previous options
+            areaSelect.innerHTML = '<option value="">Select Area</option>';
+
+            // Example areas
+            if (city === 'Pune') {
+                areaSelect.innerHTML += '<option value="Hinjewadi">Hinjewadi</option>';
+                areaSelect.innerHTML += '<option value="Kothrud">Kothrud</option>';
+            } else if (city === 'Mumbai') {
+                areaSelect.innerHTML += '<option value="Andheri">Andheri</option>';
+                areaSelect.innerHTML += '<option value="Bandra">Bandra</option>';
+            } else if (city === 'Bangalore') {
+                areaSelect.innerHTML += '<option value="Koramangala">Koramangala</option>';
+                areaSelect.innerHTML += '<option value="Whitefield">Whitefield</option>';
+            } else if (city === 'Mysore') {
+                areaSelect.innerHTML += '<option value="Gokulam">Gokulam</option>';
+                areaSelect.innerHTML += '<option value="Vijayanagar">Vijayanagar</option>';
+            } else if (city === 'Ahmedabad') {
+                areaSelect.innerHTML += '<option value="CG Road">CG Road</option>';
+                areaSelect.innerHTML += '<option value="Navrangpura">Navrangpura</option>';
+            } else if (city === 'Surat') {
+                areaSelect.innerHTML += '<option value="Adajan">Adajan</option>';
+                areaSelect.innerHTML += '<option value="Vesu">Vesu</option>';
+            } else if (city === 'Delhi') {
+                areaSelect.innerHTML += '<option value="Connaught Place">Connaught Place</option>';
+                areaSelect.innerHTML += '<option value="Hauz Khas">Hauz Khas</option>';
+            }
+            // Add other cities and areas as needed
+        }
+
+        function updateMap() {
+            var state = document.getElementById('state').value;
+            var city = document.getElementById('city').value;
+            var area = document.getElementById('area').value;
+            var mapFrame = document.getElementById('map');
+
+            var mapURL = '';
+
+            // Example URL to update map
+            if (state === 'Maharashtra' && city === 'Pune') {
+                if (area === 'Hinjewadi') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.652929335178!2d73.83558041494207!3d18.52730438737143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c24ecb5c3b89%3A0x7f8e0d1c7d8f9a5!2sHinjewadi%2C+Pune%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1642369785122!5m2!1sen!2sin';
+                } else if (area === 'Kothrud') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.682565295017!2d73.80517781594233!3d18.505676972332092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c2ab6918d8e3%3A0x4d485a245d91e1b!2sKothrud%2C+Pune%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1642370077924!5m2!1sen!2sin';
+                }
+            } else if (state === 'Karnataka' && city === 'Bangalore') {
+                if (area === 'Koramangala') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77579.20748939312!2d77.575827214348!3d12.9279290921882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae140bf0b5151d%3A0x24f4f0dc0aa941ec!2sKoramangala%2C+Bengaluru%2C+Karnataka!5e0!3m2!1sen!2sin!4v1642370566825!5m2!1sen!2sin';
+                } else if (area === 'Whitefield') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77767.89229279045!2d77.7413215943852!3d12.97832085978511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae160d6a423f81%3A0x5c6f671453582f7b!2sWhitefield%2C+Bengaluru%2C+Karnataka!5e0!3m2!1sen!2sin!4v1642370818224!5m2!1sen!2sin';
+                }
+            } else if (state === 'Gujarat' && city === 'Ahmedabad') {
+                if (area === 'CG Road') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119844.87825173152!2d72.5370821!3d23.0354595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83fb1b92ebf7%3A0xeaa64a64b6dbb62d!2sCG+Road%2C+Ahmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1642370955473!5m2!1sen!2sin';
+                } else if (area === 'Navrangpura') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119804.07414412034!2d72.5418204!3d23.0437945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83f4f0041b87%3A0x50f621f4b4ff930b!2sNavrangpura%2C+Ahmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1642371125730!5m2!1sen!2sin';
+                }
+            } else if (state === 'Delhi' && city === 'Delhi') {
+                if (area === 'Connaught Place') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28206.87276970803!2d77.21744552267938!3d28.62586354965234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e14560a3a1f%3A0x9d5c0f49b504fb5!2sConnaught+Place%2C+New+Delhi%2C+Delhi!5e0!3m2!1sen!2sin!4v1642371353360!5m2!1sen!2sin';
+                } else if (area === 'Hauz Khas') {
+                    mapURL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28241.108703375497!2d77.20839182985615!3d28.55477878754035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1c58f24c4d0f%3A0x51f63de55ab64c5f!2sHauz+Khas%2C+New+Delhi%2C+Delhi!5e0!3m2!1sen!2sin!4v1642371557712!5m2!1sen!2sin';
+                }
+            }
+
+            mapFrame.src = mapURL;
+        }
+    </script>  
+    
+</body>
+</html>
+

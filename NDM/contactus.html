@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - National Disaster Management</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .sub-header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: relative;
+    }
+    .sub-header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .sub-header a img {
+        width: 150px;
+    }
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+    .nav-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+    }
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .contact-us {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .contact-info {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1200px;
+    }
+    .contact-info div {
+        flex: 1;
+        margin: 10px;
+    }
+    .contact-info i {
+        font-size: 24px;
+        color: #007BFF;
+        margin-right: 10px;
+    }
+    .contact-info h5 {
+        margin: 5px 0;
+    }
+    .contact-form {
+        width: 100%;
+        max-width: 800px;
+    }
+    .contact-form input, .contact-form textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .contact-form button:hover {
+        background-color: #0056b3;
+    }
+    .map {
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto; /* Center align the map */
+    }
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .footer .icons a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+</style>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+            <div class="nav-links" id="navLinks">  
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <!-- Add your navigation items here -->
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+    </section>
+<br>
+<br>
+<section class="contact-us">
+        <div class="contact-form">
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+</section>
+<br>
+<br>
+
+        <section class="map">
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.184413965981!2d73.73721271523322!3d18.620703987401697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c8fe982f5b61%3A0x967c5f3a735eb1a5!2sInternational+Institute+of+Information+Technology+P-14%2C+Rajiv+Gandhi+Infotech+Park%2C+Hinjewadi%2C+Pune%2C+Maharashtra+411057%2C+India!5e0!3m2!1sen!2sin!4v1633966188376!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+
+    <section class="contact-us">
+        <div class="contact-info">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>International Institute of Information Technology, Pune</h5>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+91 8793939543</h5>
+                    <p>Available 24/7</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span>
+                    <h5>yashborade072@gmail.com</h5>
+                    <p>Email us your query</p>
+                </span>
+            </div>
+        </div>
+</section>
+
+    <!-------- footer ---------->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>We offer a Unified Disaster Management Platform that integrates essential disaster response functions to enhance efficiency and community resilience.</p>
+        
+        <div class="icons">
+            <a href="https://www.facebook.com/yash.borade.520"><i class="fa fa-facebook"></i></a>
+            <a href="https://x.com/YashBor85156585"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/yash_borade001/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/yash-borade-486776195/"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <p>&copy; 2024 Unified Disaster Management Platform</p>
+    </section>    
+
+    <!----JavaScript for toggle menu---->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>  
+    
+</body>
+</html>
+
